@@ -81,5 +81,7 @@ ensure_tmux_is_running() {
   fi
 }
 
+cat $( cd "$(dirname "${BASH_SOURCE[0]}")" ; pwd -P )/assets/aaron.txt
+
 # NOTE: I think this needs to be called after everything else!
 ensure_tmux_is_running
