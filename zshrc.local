@@ -81,8 +81,13 @@ ensure_tmux_is_running() {
   fi
 }
 
-cat $( cd "$(dirname "${BASH_SOURCE[0]}")" ; pwd -P )/assets/aaron.txt
-open $( cd "$(dirname "${BASH_SOURCE[0]}")" ; pwd -P )/assets/aaron.jpg
+# Rarely, but surely, remind me that Aaron was here
+ONE_IN_TWO_HUNDRED=$(( ( RANDOM % 200 )  + 1 ))
+if [ "$ONE_IN_TWO_HUNDRED" = "1" ]; then
+    cat $( cd "$(dirname "${BASH_SOURCE[0]}")" ; pwd -P )/assets/aaron.txt
+    open $( cd "$(dirname "${BASH_SOURCE[0]}")" ; pwd -P )/assets/aaron.jpg
+fi
+
 
 # NOTE: I think this needs to be called after everything else!
 ensure_tmux_is_running
